@@ -39,6 +39,7 @@
 
 ## INSTRUÇÕES DE USO
 - Clone ou baixe o repositório para o seu computador.
+- Extraia o arquivo zip.
 - Abra o arquivo index.html em um navegador.
 - Preencha o formulário com as informações do produto e clique em "Cadastrar Produto".
 - A lista de produtos será exibida ao clicar em "Listar Produtos", ordenada pelo valor.
