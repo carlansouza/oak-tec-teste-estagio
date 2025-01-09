@@ -1,0 +1,72 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro e Listagem de Produtos</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="navbar navbar-dark bg-dark">
+        <nav class="container-fluid">
+            <a class="navbar-brand" href="#">OAK Tecnologia</a>
+            <a class="navbar-brand" href="#">Cadastro e Listagem de Produtos</a>
+            
+        </nav>
+    </div>
+    <div class="container mt-5">
+        <fieldset id="fieldsetShow" class="border rounded-3 p-3">
+            <legend class="float-none w-auto px-3">Formulário de Cadastro</legend>
+            <form id="productForm" class="mb-4">
+                <div class="form-group">
+                    <label for="name">Nome do Produto:</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="description">Descrição do Produto:</label>
+                    <input type="text" id="description" name="description" class="form-control" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="price">Valor do Produto:</label>
+                    <input type="number" id="price" name="price" step="0.01" class="form-control" required>
+                </div>
+    
+                <div class="form-group">
+                    <label>Disponível para Venda:</label><br>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" id="availableYes" name="available" value="sim" class="form-check-input" required>
+                        <label class="form-check-label" for="availableYes">Sim</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" id="availableNo" name="available" value="não" class="form-check-input">
+                        <label class="form-check-label" for="availableNo">Não</label>
+                    </div>
+                </div>
+    
+                <button type="submit" class="btn btn-primary">Cadastrar Produto</button>
+                <button onclick="displayProducts()" class="btn btn-primary">Listar Produtos</button>
+            </form>
+        </fieldset>
+
+        <div id="productList" class="d-none">
+            <h2>Lista de Produtos</h2>
+            <button onclick="showForm()" class="btn btn-secondary mb-3">Cadastrar Novo Produto</button>
+            <button onclick="clearLocalStorage()" class="btn btn-secondary mb-3">Limpar Lista</button>
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Valor</th>
+                        <th>Disponível</th>
+                    </tr>
+                </thead>
+                <tbody id="productsTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="/src/data/product.js"></script>
+</body>
+</html>
