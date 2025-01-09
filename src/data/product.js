@@ -12,6 +12,8 @@ document.getElementById('productForm').addEventListener('submit', function(event
     products.push(newProduct);
     products.sort((a, b) => a.price - b.price);
     saveProductsToLocalStorage();
+    clearForm();
+    displayProducts();
 });
 
 function displayProducts() {
